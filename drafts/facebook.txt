@@ -1,0 +1,302 @@
+/*
+ 
+ ------------
+ App Permissions
+ ------------
+ pages_manage_posts
+ pages_read_engagement 
+ publish_video
+ pages_read_user_content ^^  manage_pages
+
+https://www.facebook.com/v7.0/
+    dialog/oauth?
+    auth_type=reauthenticate&
+    client_id=356238094978494&
+    state=fa86987848089a877444e92e848b921a&
+    response_type=code&
+    sdk=php-sdk-5.6.0&
+    redirect_uri=https%3A%2F%2Fapp.revive.social%2Ffb_auth&
+    scope=pages_manage_posts,email,publish_to_groups,instagram_basic,instagram_content_publish
+    &display=popup
+    &ret=login&fbapp_pres=0&logger_id=1506f675-ca38-4d52-9bfe-c7282ed1dfba&tp=unspecified&ext=1627604097&hash=Aea45qF7kXf1JCvo96M
+
+*/
+
+
+
+
+    /*
+    // Insert Post 
+    $instance = new Scoda_Helper();
+    $scoda    = $instance->request(  
+        'https://graph.facebook.com/105486728499415/feed', 
+        'POST',
+        array(
+            'body' => array(
+                'message' => 'lorem ipsum dummy text for printing news',
+                'access_token' => 'EAAM0Ax8JZBZA0BAE41dC6jW2mqqNsOwvjJRCSba8W1ZAfFvue97iYGGoFmzZBwt6c7UWj6VqwQT8CmEmOKf6QsiCVYZB8Dx6MxyE1zM1dd4QHAzHY2v81NVopIVR0rq6DcfmtO0x8dZCJzYks3jqAHKikRJMcoxLzLaHx3AW3MzlDdjZBeNKB4KEtkKY1v2C5dfHagsYKtkJQZDZD'
+            )
+        )
+    );
+    */
+
+    
+   /*
+   // Update Post 
+    $instance = new Scoda_Helper();
+    $scoda    = $instance->request(  
+        'https://graph.facebook.com/105486728499415_108003511581070', 
+        'POST',
+        array(
+            'body' => array(
+                'message' => 'I am updating my Page post Number #100',
+                'access_token' => 'EAAM0Ax8JZBZA0BAE41dC6jW2mqqNsOwvjJRCSba8W1ZAfFvue97iYGGoFmzZBwt6c7UWj6VqwQT8CmEmOKf6QsiCVYZB8Dx6MxyE1zM1dd4QHAzHY2v81NVopIVR0rq6DcfmtO0x8dZCJzYks3jqAHKikRJMcoxLzLaHx3AW3MzlDdjZBeNKB4KEtkKY1v2C5dfHagsYKtkJQZDZD'
+            )
+        )
+    );
+     
+    */
+
+    /*
+    Delete post 
+    $instance = new Scoda_Helper();
+    $scoda    = $instance->request(  
+        'https://graph.facebook.com/105486728499415_108001201581301',
+        "DELETE",
+        array(
+            'body' => array(
+                "access_token" => "EAAM0Ax8JZBZA0BAEyhhGxLf3oF9DAERipKGJNAoCSRZCNTvcZCsgpBMdrIl6g0ZBhKx6sMPjhb4ZBcKNBXmEOqg7JAtOjLtjGZBZCWtCO0yz04BYxbT49nxEI25VHMPHf8ej5bn9J9N9ONPtF7PARmFwE7zWzZAYsii59hEPKvrMBw0sKadS6NsUpHZCvVatNItjYSA38IMb8v9AZDZD"
+            )
+        ) 
+    );
+    */
+
+    
+    echo "<pre>";
+        print_r( $scoda );
+    echo "</pre>";
+
+
+
+
+
+
+
+        
+    $instance = new Scoda_Facebook();
+    $credentials = $instance->get_credentials();
+    
+    $instance->scoda_set_option( 'facebook', array(
+        'app_id' => '10454',
+        'secret_id' => '45889990' 
+    ));
+    
+    // Delete all option by plugin key 
+    $instance->scoda_delete_option( 'all' );
+    
+    // Delete by stored option key 
+    $instance->scoda_delete_option( 'facebook', [ 'secret_id', 'app_id' ]  )
+
+    // Delete By Social Name
+    $instance->scoda_delete_option( 'facebook' )
+    
+    echo "<pre>";
+    print_r( get_option( apply_filters( 'eratags/scoda_options', '' ) ) );
+    echo "</pre>";
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+     $instance = new Scoda_Facebook();
+    
+    $instance->scoda_set_option( 'facebook', array(
+        'app_id' => '901612940425629',
+        'secret_id' => '0ae81d0552ded822e4645eb4ff7910ca' 
+    ));
+
+    $code = "AQCXYRVzjEc_sK1lfC3DY7DyRbgwTdpMvnSyOu6H1bPQ2saxKBLIpXN8jcRC0qzDxWBwHxyZlchyxOyQ_Z4TyJ3AVtQP8pO1mRh--wJBE1pNjOgNR-h0ea1v9Ex6eb0-3o2_DRJYK0UB4cWVNdaR9G5TubI4BpNBzqEr3yQK9LAwEo1r51aavAkqD30NzGbvTxf4YnfN9WnkBPdD-rIm32Df06C_I-W4Lc2ctouEgGqIPhjMftTIQG8PPls9i0oTf0kwPz11tN9Sy1_KtYYAzS_KmLtCKfTnWzU9Au-z_4H8NyysIuNMbX6mIWXGKreGc1-rftdLG5RzMxPWu6_ltdMw#_=_";
+    echo $instance->authorize_url();
+    $authentication = $instance->authentication( $code );
+     
+    echo "<pre>";
+    print_r( $authentication );
+    echo "</pre>";
+     
+    echo "<pre>";
+    print_r( $instance->scoda_get_option( 'facebook' ) );
+    echo "</pre>";
+
+
+
+
+
+
+
+
+
+'access_token' => $user_token,
+'message' => "Test Message",
+'caption' => "THis is a Caption",
+'name' => "Test Name",
+'description' => "This is a description",
+'link' => 'http://url.com/',
+'picture' => $photo_Url,
+
+
+
+
+
+
+
+// GET ALL GROUPD I MANAGE 
+// ----------------------------------------------
+    params => GET 
+       admin_only => true  
+       access_token => user access token 
+    https://graph.facebook.com/v11.0/me/groups 
+
+
+GET ALL PAGES I MANAGE -> permission is pages_show_list
+// -----------------------------------------------------    
+    params => GET
+    access_token => user access token 
+    https://graph.facebook.com/v11.0/me/accounts 
+
+
+
+
+
+    // Simple Of How to do an authorization with facebook  
+add_action( 'init', function(){
+    
+    
+    $instance = new Scoda_Facebook(); 
+
+    echo "<a href='". esc_url( $instance->authorize_url() ) . "'>Authorize Your App</a>";
+    
+
+    $revok_url = add_query_arg(
+        array(
+            'revok' => 'yes'
+        ),
+        home_url()
+    );
+
+    echo "<br /><a style='color:red;' href='". esc_url( $revok_url ) ."'>Revoking</a>";
+    
+    if ( isset( $_REQUEST['code'] ) ) {
+        $instance->oauth( $_REQUEST['code'] );
+    }
+    
+    if ( isset( $_REQUEST['revok'] ) && $_REQUEST['revok'] === 'yes' ) {
+        $instance->revoking();
+    }
+    
+    $fb = $instance->scoda_get_option( 'facebook' );
+    ?>
+
+    <?php  if ( isset( $fb['accounts'] ) && count( $fb['accounts'] ) ): ?>
+    <table>
+        
+        <tr>
+            <td>Name</td>
+            <td>Id</td>
+            <td>Counts</td>
+            <td>Account Type</td>
+        </tr>
+        
+        <?php foreach ($fb['accounts'] as $key => $value): ?>
+        <tr>
+            <td><?php echo $value['name']; ?></td>
+            <td><?php echo $value['id']; ?></td>
+            <td><?php echo $value['users_count']; ?></td>
+            <td><?php echo $value['type']; ?></td>
+        </tr>
+        <?php endforeach; ?>
+
+    </table>
+
+    <?php endif; ?>
+    <?php 
+     
+
+     // Create Post 
+     // $create = $instance->post_feed( "4461784463880794", array( 'message' => "Hello world !" ));
+     
+     // Delete Post 
+     //$delete = $instance->delete_post_feed( '1477730299144820_2947128408871661' );
+     
+     // Get Post 
+     // $get_feeds = $instance->update_follower_counters( 'all' );
+     $get_opts = $instance->scoda_get_option( 'facebook' );
+
+     echo "<pre>";
+     print_r( $get_opts );
+     echo "</pre>";
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+get paging array next or prev directly 
+  $group = $instnce->get_feeds( '684617564898246', 1, array(), array(
+		'after' => 'QVFIUkhrLWw2RGRLRERhdmNiNUgtRnFQVEYtd0cwWTZAqY1U0akxqSC1neER6SHNHelR5dlZAuYmxPQnczWklNeGV1SXdKWm9hcGFHTk9LQ3Fva1VkS0NiZAHhvaHFpUDlxbXVoUUN1ZAUh2b3RXa042MDdKZAjhwY1habzNpVWVOakRoRW91'
+	) );
+
+
+
+
+$is_update = $instnce->update_feed( '684617564898246', array(
+		'message' => 'Era Teacher is test page !',
+		'link'	  => 'https://stackoverflow.com/' 
+	));
+
+
+	$is_update = $instnce->update_feed( '684617564898246_5010832442276715', array(
+		'message' => 'Stack Overflow Website !',
+		'link'	  => 'https://stackoverflow.com/' 
+	));
+	

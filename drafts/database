@@ -1,0 +1,12 @@
+Database  
+
+// Add new social name with options 
+$instance ->tags_set_option( 'twitter', array(
+    'consumer_key'        => 'cRjDqgXSnT3bRaUvwxxEFEJS4',
+    'consumer_secret'     => 'zkugHGY5YfKjbDn5McTC6gMiXwdUhIuHHj2MEacrPtIZARzNrx',
+    'access_token'        => '2973799125-oz1KSwAd1TP5fYxNIJYPbk7GWQjr1kY2AaZ2Acd',
+    'secret_access_token' => 'go3r8Wbyi0CIG2gOeJ3Av5h1JlMTSYj89GvLZtWdWhdW6'
+));
+
+
+	

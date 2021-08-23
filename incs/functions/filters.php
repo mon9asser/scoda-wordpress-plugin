@@ -1,6 +1,27 @@
 <?php 
 
 
+
+/**
+ * Custom keys for our plugin option name
+ * 
+ * @package SCoda  
+ * @return string 
+ *  
+ */
+if ( !function_exists( 'scoda_filter_the_scoda_plugin_key_name_callback' ) ) {
+	
+	function scoda_filter_the_scoda_plugin_key_name_callback() {
+		
+		return 'eratags_scoda_options';
+
+	}
+	
+	add_filter( 'eratags/option_key', 'scoda_filter_the_scoda_plugin_key_name_callback' );
+}
+
+
+
 /**
  * Custom user information data fields to be accessible in our backend
  * You know the apis are changing every moment so we made this filter to avoid any error 
@@ -15,13 +36,13 @@ if ( !function_exists( 'scoda_custom_twitter_user_info_fields' ) ) {
     
     function scoda_custom_twitter_user_info_fields( $user ) {
 
-        if ( !count( $user ) ) {
+		$obj = new stdClass();
+		
+        if ( ! isset( $user->id ) ) {
             return $user;
-        }
+        } 
 
-        $obj = ( object ) array();
-
-        $obj->id              = isset( $user->id ) ? $user->id: '';
+        $obj->id              = isset( $user->id )? $user->id: '';
         $obj->account_name    = isset( $user->name )? $user->name: '';
         $obj->followers_count = isset( $user->followers_count )? $user->followers_count: '';
         $obj->friends_count   = isset( $user->friends_count )? $user->friends_count: '';
@@ -435,3 +456,103 @@ if ( !function_exists( 'scoda_custom_facebook_feed_paging_fields' )  ) {
 	add_filter( 'eratags/scoda/facebook/feed_paging', 'scoda_custom_facebook_feed_paging_fields', 10, 2  );
 }
 
+/**
+ * Custom Blog Follower Counter to be accessible in our backend
+ * You know the apis are changing every moment so we made this filter to avoid any error
+ *
+ * @package Tumblr
+ * @api /:blog_name/follower
+ *
+ * @param $obj
+ *
+ * @return object
+ *
+ */
+if ( !function_exists( 'scoda_custom_tumblr_blog_follower_fields' ) ) {
+
+	function scoda_custom_tumblr_blog_follower_fields( $object_info, $obj_counter ) {
+
+		$return = (  object ) array();
+
+		// Getting Blog Follower Counts
+		if ( isset( $obj_counter->meta ) ) {
+			unset( $obj_counter->meta );
+		}
+
+		if ( isset( $obj_counter->response ) ) {
+			$return->follower_counts = isset( $obj_counter->response['total_users'] ) ? $obj_counter->response['total_users']: 0;
+		} else {
+			$return->counter  = $obj_counter;
+		}
+
+		// Getting Blog Information
+		if( isset( $object_info->response['blog'] ) ) {
+
+			$blog = $object_info->response['blog'];
+
+			foreach ( $blog as $key => $value ) {
+				$return->{$key} = $value;
+			}
+
+		} else {
+			$return->info  = $object_info;
+		}
+
+		return  $return;
+
+	}
+
+	add_filter( 'eratags/scoda/tumplr/blog_information', 'scoda_custom_tumblr_blog_follower_fields', 10, 2 );
+}
+
+/**
+ * Custom Tumblr Blog Feeds Fields to be accessible in our backend
+ * You know the apis are changing every moment so we made this filter to avoid any error
+ *
+ * @package Tumblr
+ * @api /:blog_name/posts
+ *
+ * @param $feeds
+ *
+ * @return object
+ *
+ */
+if ( !function_exists( 'scoda_custom_tumblr_blog_feed_fields' ) ) {
+
+	if ( !function_exists( 'delete_unneeded_tumblr_blog_feed_fields' ) ) {
+
+		function delete_unneeded_tumblr_blog_feed_fields( $field ) {
+
+			$unneed = array( 'blog', 'id_string', 'trail' );
+			foreach ( $unneed as $unneeded) {
+				if ( isset( $field[$unneeded] ) ) {
+					unset( $field[$unneeded] );
+				}
+			}
+			return $field;
+
+		}
+
+	}
+
+	function scoda_custom_tumblr_blog_feed_fields( $feeds ) {
+
+		$posts = array();
+
+		if ( !isset( $feeds->response ) || !isset( $feeds->response['posts'] ) ) {
+			return $feeds;
+		}
+
+		$feeds = $feeds->response['posts'];
+
+		// Delete unneded fields
+		if ( function_exists( 'delete_unneeded_tumblr_blog_feed_fields' ) ) {
+			$feeds = array_map( 'delete_unneeded_tumblr_blog_feed_fields', $feeds );
+		}
+
+		return $feeds;
+	}
+
+	add_filter( 'eratags/scoda/tumplr/blog_feeds', 'scoda_custom_tumblr_blog_feed_fields' );
+
+}

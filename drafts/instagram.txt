@@ -1,0 +1,10 @@
+$instance = new Scoda_Instagram();
+
+
+	echo $instance->authorize_url();
+
+	$opts = $instance->tags_get_option( 'instagram' );
+	
+	echo "<pre>";
+	print_r( $opts );
+	echo "</pre>";

@@ -23,6 +23,39 @@ add_action( 'init', function() {
 
 
 
+add_action( 'init', function() {
+    
+	$twitter = new Scoda_Twitter(); 
+
+	  echo  $twitter->authorization_url();
+
+	/* $twitter->tags_set_option( $twitter->social_name, array(
+		'access_token' => 'i56ugwAAAAABAcq0AAABezcq3d4',
+		'secret_access_token' => 'G554nDz9Jh9Ncfoa38G5slR6cGmDQvwg'
+	));
+	*/
+
+
+	if ( isset( $_REQUEST['oauth_token'] ) & isset($_REQUEST['oauth_verifier']) ) {
+		
+		$req = $twitter->authentication( $_REQUEST['oauth_token'], $_REQUEST['oauth_verifier'] );
+		echo "<pre>";
+		print_r( $req );
+		echo "</pre>"; 
+	}
+
+  	
+	
+	$ff = $twitter->tags_get_option( $twitter->social_name );
+
+	echo "<pre>";
+ 	 print_r( $ff );
+	echo "</pre>";
+	 
+	echo "HELLO WORLD";
+});
+
+
 
 
 

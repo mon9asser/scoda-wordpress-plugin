@@ -42,3 +42,20 @@ if ( ! function_exists( 'tags_get_array_field_from_big_array' ) ) {
     add_filter( 'eratags/get_array_field', 'tags_get_array_field_from_big_array', 10, 2 );
 
 }
+
+/**
+ * Filter Of Eratags to set option name for our current item 
+ *  
+ * @param $opts_key default option key name 
+ * 
+ * @return string option key name 
+ */
+if ( !function_exists( 'eratags_item_option_name' ) ) {
+    
+    function eratags_item_option_name( $opts_key ) {
+        return 'eratags_options';
+    }
+
+    add_filter( 'eratags/option_key', 'eratags_item_option_name', 10, 1 );
+
+}

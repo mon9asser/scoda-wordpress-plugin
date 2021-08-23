@@ -1,0 +1,1484 @@
+
+/* 
+* ====================================================================
+* Main Menu Page Logo ( Scoda Logo Styles ) 
+* ====================================================================
+*/
+
+*[class^='scoda'] {
+	-webkit-border-box: border-box;
+	-moz-border-box: border-box;
+	box-sizing: border-box;
+}
+
+#adminmenu li.toplevel_page_eratags-scoda-options div.wp-menu-image img {
+	width: 19px;
+	margin-top: -1px;
+}
+ 
+
+/* 
+* ====================================================================
+* Layouts ( Wrappers - Grids - Columns )
+* ====================================================================
+*/
+
+
+
+.scoda-preloader {
+	position: absolute;
+	background-color: #f0f0f1;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	top: 0;
+	height: 100%;
+	width: 100%;
+	z-index: 1;
+}
+.scoda-preloader svg {
+	left: 50%;
+	position: fixed;
+	top: 50%;
+}
+
+
+
+.scoda-sticky {
+	position: -webkit-sticky;
+	position: sticky;
+	z-index: 999;
+}
+.scoda-t-20 {
+	top: 60px;
+}
+  
+.scoda-after-box::after, .scoda-wrap::after,
+.scoda-boxed::after,
+.scoda-boxed-x1::after,
+.scoda-boxed-x2::after,
+.scoda-mega-menu::after {
+  content: '';
+  position: relative;
+  width: 100%;
+  display: block;
+}
+
+
+
+.scoda-col-bx, .scoda-col-sm-1, .scoda-col-sm-2, .scoda-col-sm-3, .scoda-col-sm-4, .scoda-col-sm-5, .scoda-col-sm-6, .scoda-col-sm-7, .scoda-col-sm-8, .scoda-col-sm-9, .scoda-col-sm-10, .scoda-col-sm-11, .scoda-col-sm-12, .scoda-col-md-1, .scoda-col-md-2, .scoda-col-md-3, .scoda-col-md-4, .scoda-col-md-5, .scoda-col-md-6, .scoda-col-md-7, .scoda-col-md-8, .scoda-col-md-9, .scoda-col-md-10, .scoda-col-md-11, .scoda-col-md-12, .scoda-col-lg-1, .scoda-col-lg-2, .scoda-col-lg-3, .scoda-col-lg-4, .scoda-col-lg-5, .scoda-col-lg-6, .scoda-col-lg-7, .scoda-col-lg-8, .scoda-col-lg-9, .scoda-col-lg-10, .scoda-col-lg-11, .scoda-col-lg-12, .scoda-col-xl-1, .scoda-col-xl-2, .scoda-col-xl-3, .scoda-col-xl-4, .scoda-col-xl-5, .scoda-col-xl-6, .scoda-col-xl-7, .scoda-col-xl-8, .scoda-col-xl-9, .scoda-col-xl-10, .scoda-col-xl-11, .scoda-col-xl-12 {
+  width: 100%;
+  position: relative;
+}
+
+.scoda-wrap,
+.scoda-boxed,
+.scoda-boxed-x1,
+.scoda-boxed-x2,
+.scoda-mega-menu {
+  width: 100%;
+  max-width: 100%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+.scoda-hide-all {
+	display: none;
+}
+
+.scoda-row {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -moz-flex;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-lines: wrap;
+  -moz-box-lines: wrap;
+  -ms-flex-wrap: wrap;
+  -webkit-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+
+.scoda-row.scoda-center-cols {
+  justify-content: center;
+}
+
+.scoda-flexbox {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -moz-flex;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-lines: nowrap;
+  -moz-box-lines: nowrap;
+  -ms-flex-wrap: nowrap;
+  -webkit-flex-wrap: nowrap;
+  flex-wrap: nowrap;
+  -webkit-flex-direction: row;
+  -moz-flex-direction: row;
+  -ms-flex-direction: row;
+  -o-flex-direction: row;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+ 
+
+.scoda-flexbox::after {
+  display: none;
+}
+
+.scoda-flexbox.baseline {
+  align-items: baseline;
+}
+
+.scoda-flexbox.enable-columns {
+  -webkit-flex-direction: column;
+  -moz-flex-direction: column;
+  -ms-flex-direction: column;
+  -o-flex-direction: column;
+  flex-direction: column;
+}
+
+.scoda-flexbox.enable-wrap {
+  -webkit-box-lines: wrap;
+  -moz-box-lines: wrap;
+  -ms-flex-wrap: wrap;
+  -webkit-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+
+.scoda-flexbox.enable-wide > * {
+  width: 100%;
+}
+
+.scoda-flexbox.scoda-same-sizes > * {
+  -moz-box-flex: 1;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+}
+
+.scoda-flexbox.scoda-same-sizes.scoda-max-1-grids > * {
+  -ms-flex-preferred-size: 100%;
+  flex-basis: 100%;
+  -moz-flex-basis: 100%;
+  -webkit-flex-basis: 100%;
+}
+
+.scoda-flexbox.scoda-same-sizes.scoda-max-2-grids > * {
+  -ms-flex-preferred-size: 50%;
+  flex-basis: 50%;
+  -moz-flex-basis: 50%;
+  -webkit-flex-basis: 50%;
+}
+
+.scoda-flexbox.scoda-same-sizes.scoda-max-3-grids > * {
+  -ms-flex-preferred-size: 33.33333%;
+  flex-basis: 33.33333%;
+  -moz-flex-basis: 33.33333%;
+  -webkit-flex-basis: 33.33333%;
+}
+
+.scoda-flexbox.scoda-same-sizes.scoda-max-4-grids > * {
+  -ms-flex-preferred-size: 25%;
+  flex-basis: 25%;
+  -moz-flex-basis: 25%;
+  -webkit-flex-basis: 25%;
+}
+
+.scoda-flexbox.scoda-same-sizes.scoda-max-5-grids > * {
+  -ms-flex-preferred-size: 20%;
+  flex-basis: 20%;
+  -moz-flex-basis: 20%;
+  -webkit-flex-basis: 20%;
+}
+
+.scoda-flexbox.scoda-same-sizes.scoda-max-6-grids > * {
+  -ms-flex-preferred-size: 16.66667%;
+  flex-basis: 16.66667%;
+  -moz-flex-basis: 16.66667%;
+  -webkit-flex-basis: 16.66667%;
+}
+
+.scoda-grids-1 {
+  -moz-box-flex: 1;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  -ms-flex-preferred-size: 16.66667%;
+  flex-basis: 16.66667%;
+  -moz-flex-basis: 16.66667%;
+  -webkit-flex-basis: 16.66667%;
+}
+
+.scoda-grow-1 {
+  -ms-flex-positive: 1;
+  -moz-flex-grow: 1;
+  -webkit-flex-grow: 1;
+  flex-grow: 1;
+}
+
+.scoda-grids-2 {
+  -moz-box-flex: 2;
+  -webkit-flex: 2;
+  -ms-flex: 2;
+  flex: 2;
+  -ms-flex-preferred-size: 33.33333%;
+  flex-basis: 33.33333%;
+  -moz-flex-basis: 33.33333%;
+  -webkit-flex-basis: 33.33333%;
+}
+
+.scoda-grow-2 {
+  -ms-flex-positive: 2;
+  -moz-flex-grow: 2;
+  -webkit-flex-grow: 2;
+  flex-grow: 2;
+}
+
+.scoda-grids-3 {
+  -moz-box-flex: 3;
+  -webkit-flex: 3;
+  -ms-flex: 3;
+  flex: 3;
+  -ms-flex-preferred-size: 50%;
+  flex-basis: 50%;
+  -moz-flex-basis: 50%;
+  -webkit-flex-basis: 50%;
+}
+
+.scoda-grow-3 {
+  -ms-flex-positive: 3;
+  -moz-flex-grow: 3;
+  -webkit-flex-grow: 3;
+  flex-grow: 3;
+}
+
+.scoda-grids-4 {
+  -moz-box-flex: 4;
+  -webkit-flex: 4;
+  -ms-flex: 4;
+  flex: 4;
+  -ms-flex-preferred-size: 66.66667%;
+  flex-basis: 66.66667%;
+  -moz-flex-basis: 66.66667%;
+  -webkit-flex-basis: 66.66667%;
+}
+
+.scoda-grow-4 {
+  -ms-flex-positive: 4;
+  -moz-flex-grow: 4;
+  -webkit-flex-grow: 4;
+  flex-grow: 4;
+}
+
+.scoda-grids-5 {
+  -moz-box-flex: 5;
+  -webkit-flex: 5;
+  -ms-flex: 5;
+  flex: 5;
+  -ms-flex-preferred-size: 83.33333%;
+  flex-basis: 83.33333%;
+  -moz-flex-basis: 83.33333%;
+  -webkit-flex-basis: 83.33333%;
+}
+
+.scoda-grow-5 {
+  -ms-flex-positive: 5;
+  -moz-flex-grow: 5;
+  -webkit-flex-grow: 5;
+  flex-grow: 5;
+}
+
+.scoda-grids-6 {
+  -moz-box-flex: 6;
+  -webkit-flex: 6;
+  -ms-flex: 6;
+  flex: 6;
+  -ms-flex-preferred-size: 100%;
+  flex-basis: 100%;
+  -moz-flex-basis: 100%;
+  -webkit-flex-basis: 100%;
+}
+
+.scoda-grow-6 {
+  -ms-flex-positive: 6;
+  -moz-flex-grow: 6;
+  -webkit-flex-grow: 6;
+  flex-grow: 6;
+}
+
+.scoda-shrink-0 {
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+}
+
+.scoda-shrink-1 {
+  -webkit-flex-shrink: 1;
+  -ms-flex-negative: 1;
+  flex-shrink: 1;
+}
+
+.scoda-shrink-2 {
+  -webkit-flex-shrink: 2;
+  -ms-flex-negative: 2;
+  flex-shrink: 2;
+}
+
+.scoda-shrink-3 {
+  -webkit-flex-shrink: 3;
+  -ms-flex-negative: 3;
+  flex-shrink: 3;
+}
+
+.scoda-shrink-4 {
+  -webkit-flex-shrink: 4;
+  -ms-flex-negative: 4;
+  flex-shrink: 4;
+}
+
+.scoda-shrink-5 {
+  -webkit-flex-shrink: 5;
+  -ms-flex-negative: 5;
+  flex-shrink: 5;
+}
+
+.scoda-shrink-6 {
+  -webkit-flex-shrink: 6;
+  -ms-flex-negative: 6;
+  flex-shrink: 6;
+}
+
+.scoda-flex-end-cols {
+  justify-content: flex-end;
+}
+
+.scoda-space-between-cols {
+  justify-content: space-between;
+}
+
+.scoda-space-around-cols {
+  justify-content: space-around;
+}
+
+.scoda-order-1 {
+  -webkit-box-ordinal-group: 1;
+  -moz-box-ordinal-group: 1;
+  -ms-flex-order: 1;
+  -webkit-order: 1;
+  order: 1;
+}
+
+.scoda-order-2 {
+  -webkit-box-ordinal-group: 2;
+  -moz-box-ordinal-group: 2;
+  -ms-flex-order: 2;
+  -webkit-order: 2;
+  order: 2;
+}
+
+.scoda-order-3 {
+  -webkit-box-ordinal-group: 3;
+  -moz-box-ordinal-group: 3;
+  -ms-flex-order: 3;
+  -webkit-order: 3;
+  order: 3;
+}
+
+.scoda-order-4 {
+  -webkit-box-ordinal-group: 4;
+  -moz-box-ordinal-group: 4;
+  -ms-flex-order: 4;
+  -webkit-order: 4;
+  order: 4;
+}
+
+.scoda-order-5 {
+  -webkit-box-ordinal-group: 5;
+  -moz-box-ordinal-group: 5;
+  -ms-flex-order: 5;
+  -webkit-order: 5;
+  order: 5;
+}
+
+.scoda-order-6 {
+  -webkit-box-ordinal-group: 6;
+  -moz-box-ordinal-group: 6;
+  -ms-flex-order: 6;
+  -webkit-order: 6;
+  order: 6;
+}
+
+.scoda-order-7 {
+  -webkit-box-ordinal-group: 7;
+  -moz-box-ordinal-group: 7;
+  -ms-flex-order: 7;
+  -webkit-order: 7;
+  order: 7;
+}
+
+.scoda-order-8 {
+  -webkit-box-ordinal-group: 8;
+  -moz-box-ordinal-group: 8;
+  -ms-flex-order: 8;
+  -webkit-order: 8;
+  order: 8;
+}
+
+.scoda-order-9 {
+  -webkit-box-ordinal-group: 9;
+  -moz-box-ordinal-group: 9;
+  -ms-flex-order: 9;
+  -webkit-order: 9;
+  order: 9;
+}
+
+.scoda-order-10 {
+  -webkit-box-ordinal-group: 10;
+  -moz-box-ordinal-group: 10;
+  -ms-flex-order: 10;
+  -webkit-order: 10;
+  order: 10;
+}
+
+.scoda-order-11 {
+  -webkit-box-ordinal-group: 11;
+  -moz-box-ordinal-group: 11;
+  -ms-flex-order: 11;
+  -webkit-order: 11;
+  order: 11;
+}
+
+.scoda-order-12 {
+  -webkit-box-ordinal-group: 12;
+  -moz-box-ordinal-group: 12;
+  -ms-flex-order: 12;
+  -webkit-order: 12;
+  order: 12;
+} 
+
+.scoda-plr-10 {
+	padding-left: 10px;
+	padding-right: 10px;
+}
+.scoda-plr-20 {
+	padding-left: 20px;
+	padding-right: 20px;
+}
+.scoda-mlr-20-minus {
+	margin-left: -20px;
+	margin-right: -20px;
+}
+
+/* ======================================================
+	Tabs And Plugin Information
+=========================================================*/
+
+.scoda-info-tabs {
+	margin: 20px 0;
+	padding: 30px 30px 20px 30px;
+	width:100%;
+	background-color: #F6F6F7;
+}
+
+.scoda-info-tabs .details {
+	padding-left: 30px;
+}
+
+.scoda-info-tabs h2 {
+	padding: 0;
+	margin: 0;
+	font-size: 20px;
+	color: #2f3556;
+}
+
+.scoda-info-tabs p {
+	color: #949292;
+    line-height: 1.7;
+    font-size: 14px;
+}
+
+.scoda-info-tabs span {
+	display: block;
+	position:relative;
+	width: 100%;
+	font-size: 10px;
+	padding-top: 5px;
+	text-align: center;
+	font-weight: bold;
+	color: #2f3556;
+}
+
+.scoda-info-tabs .scoda-logo-image {
+	max-width: 75px;
+}
+
+.scoda-tabs {
+	text-align: center;
+	display: block;
+	position: relative;
+	width: 100%;
+	margin-top:25px;
+}
+
+.scoda-tabs ul {
+	display: block;
+	position: relative;
+	width: 100%;
+	padding: 20px 0 0 0;
+	margin: 0 -15px;	
+	border-top: 1px solid #eee;
+}
+
+.scoda-tabs ul li {
+	display: inline-block;
+	padding: 0;
+	margin: 0;
+}
+
+.scoda-tabs ul li a {
+	padding: 5px 15px;
+	font-weight: bold;
+	color: #999;
+	cursor: pointer;
+	font-size: 14px;
+	text-decoration: none;
+}
+.scoda-tabs ul li a:hover {
+	color: #666;
+}
+
+.scoda-tabs ul li a:hover,
+.scoda-tabs ul li a:focus,
+.scoda-tabs ul li a:visited,
+.scoda-tabs ul li a:link {
+	text-decoration: none;
+	box-shadow: none;
+}
+
+.scoda-tabs ul li.active a {
+	color: #2f3556;
+}
+
+.scoda-p-10 {
+	padding: 10px;
+}
+
+/* 
+* ====================================================================
+* Help Resources Block
+* ====================================================================
+*/
+.scoda-helper-texts {
+	display: block;
+	position: relative;
+	width: 100%;
+	margin: 0px auto;
+	text-align: center;
+}
+
+.scoda-helper-texts {
+	padding: 60px 0;
+	width: 100%;
+}
+
+.scoda-helper-texts h3,
+.scoda-helper-texts p {
+	display: block;
+	padding:0;
+	margin:0 auto; 
+	width: 70%;
+}
+
+.scoda-helper-texts h3 {
+	font-size: 20px;
+	margin-bottom: 20px;
+}
+
+.scoda-helper-texts p {
+	color: #666;
+    line-height: 1.7;
+    font-size: 14px;
+}
+
+/* Box of documentation and open a new ticket */
+.scoda-resources-boxes {
+	max-width: 70%;
+	margin:0 auto;
+}
+
+.scoda-link-box {
+	background-color: #F6F6F7;
+	padding:25px;
+}
+.scoda-link-box .scoda-resource-icon {
+	width: 50px;
+	height: 50px;
+}
+.scoda-link-box .scoda-resource-icon i {
+	font-size: 50px; 
+	width: 50px;
+	height: 50px;
+}
+.scoda-link-box .scoda-resource-texts {
+	padding-left: 20px;
+}
+.scoda-link-box .scoda-resource-texts h3 { 
+	font-size: 16px;
+	padding:0;
+	margin:0;
+	font-weight: normal;
+}
+.scoda-link-box a {
+	width: 100%;
+	text-align: center;
+	background-color: #2271B1;
+	display: block;
+	padding:10px;
+	color: #fff;
+	cursor: pointer;
+	margin-top: 5px;
+	-webkit-border-box: border-box;
+	-moz-border-box: border-box;
+	box-sizing: border-box;
+}
+
+.scoda-link-box .scoda-resource-texts p {
+	color: #949292;
+    line-height: 1.7;
+    font-size: 14px;
+}
+
+/* 
+* ====================================================================
+* Table Lists
+* ====================================================================
+*/
+
+.scoda-table-title {
+	color: #969696;
+	margin-bottom: 30px;
+}
+
+.scoda-plr-10 { 
+	padding-right:10px;
+	padding-left:10px;
+}
+
+.scoda-min-width-x {
+	min-width: 25%;
+}
+.scoda-pb-space {
+	margin-top: 40px;
+	display: block;
+}
+
+.scoda-red-highlight-color {
+	color: #ff3535;
+}
+
+.scoda-table-list li {
+	background-color: #F6F6F7;
+	padding:15px;
+	margin-bottom: 10px; 
+}
+
+.scoda-table-list li span:last-child {
+	text-align: right;
+}
+
+.scoda-table-list li span:first-child {
+	color:#A0A0A0;
+}
+
+.scoda-table-list li span:not(:first-child) {
+	color:#2F3556;
+}
+
+.scoda-set-correct-icon {
+	color: #fff !important; 
+    width: 25px;
+    height: 25px;
+    border-radius: 20%;
+    vertical-align: middle;
+	align-items: center;
+	text-align: center !important;
+	line-height: 1.2;
+	vertical-align: middle !important;
+}
+
+.scoda-set-correct-icon.dashicons-yes {
+	background-color: #4fb67c;
+}
+.scoda-set-correct-icon.dashicons-no-alt {
+	background-color: #ff3535;
+}
+
+.scoda-remove-spaces.scoda-resource-texts {
+	padding-left: 0;
+	text-align: center;
+}
+
+.scoda-subscribe-inputs:focus {
+	outline: none;
+	box-shadow: none;
+}
+.scoda-subscribe-inputs {
+	width: 100%;
+	padding:8px;
+	margin-bottom: 20px;
+	border:5px solid #EDEDED;
+}
+
+.scoda-tab-title {
+	color: #82869A;
+	padding: 20px 0px 10px 20px;
+	margin: 0;
+	font-size: 14px;
+}
+ 
+
+/* 
+* ====================================================================
+* Panel Contents and tabs
+* ====================================================================
+*/
+.scoda-panel {
+	background-color: #2F3556;
+	min-height: 600px;
+	height: auto;
+	margin-top: 20px;
+	position: relative;
+}
+
+.scoda-panel-tabs {
+	position: absolute;
+	width: 240px;
+}
+
+.scoda-panel-contents {
+	background-color:#f0f0f1;
+	position:relative;
+	margin-left: 240px;
+	width: calc(100% - 240px);
+	padding: 0 15px;
+}
+
+.scoda-tab-head-contents {
+	padding: 20px 15px;
+	border-bottom: 1px solid #ffffff12;
+}
+
+.scoda-tab-head-contents  h3,
+.scoda-tab-head-contents  span {
+	padding: 0px 0px 0px 15px;
+	margin: 0;
+	color: #fff;
+}
+.scoda-tab-head-contents  h3 {
+	padding-bottom: 5px;
+}
+.scoda-tab-head-contents  span {
+	font-weight: lighter;
+}
+.scoda-panel-logo {
+	max-width: 50px; 
+	display: block;
+}
+
+.scoda-tab-lists {
+	display: block;
+	padding:0;
+	margin:0;
+	width: 100%;
+}
+.scoda-separator {
+	max-width: 80%;
+	margin: 20px auto;
+	border-bottom: 1px solid #ffffff12;
+}
+
+.scoda-tab-lists li a {
+	padding: 3px 20px;
+	text-decoration: none;
+	display: block;
+	font-size: 14px;
+	color: #979AAA;
+	vertical-align: baseline;
+}
+.scoda-tab-lists li a:focus {
+	box-shadow: none;
+}
+.scoda-tab-lists li a:hover {
+	color: #fff;
+}
+
+.scoda-tab-lists li a:hover span {
+	display: inline-block;
+}
+
+.scoda-tab-lists li a i {
+	margin-right: 12px;
+	font-size: 20px; 
+}
+
+.scoda-add-copyright-bottom {
+	position: absolute;
+	bottom: 10px;
+	left: 20px;
+	color: #82869A;
+}
+
+.scoda-tab-lists li a.scoda-activated-tab {
+	color: #fff;
+}
+
+.scoda-head-tab-title {
+	background: #f6f6f7;
+    padding: 5px 20px;
+    border-left: 2px solid #2f3556;
+}
+
+ 
+.scoda-social-setting-tabs li {
+	 padding: 0;
+	 margin: 0;
+}
+.scoda-icon-contents,
+.scoda-network-switcher-block {
+	color: #444;
+    background-color: #f6f6f7;
+    cursor: move;
+    font-weight: bold;
+    padding: 10px;
+    border: 1px solid #dcdcdc;
+}
+.scoda-network-switcher-block {
+	cursor: auto;
+	border: none;
+	overflow: hidden;
+	line-height: 40px;
+}
+/* Select 2 styles */
+.select2-container {
+	float: right;
+}
+
+.select2-selection__rendered {
+    line-height: 39px !important;
+}
+
+.select2-container .select2-selection--single {
+    height: 40px !important;
+}
+
+.select2-selection__arrow {
+    height: 39px !important;
+}
+
+.scoda-network-switcher-block h4 {
+	padding: 0;
+	margin: 0;
+	display: inline-block;
+}
+
+.scoda-icon-contents span:first-child {
+	font-size: 16px;
+    width: 30px;
+    margin-right: 15px; 
+    text-align: center;
+    color: #fff;
+    height: 30px;
+    line-height: 30px;
+}
+.scoda-icon-setting {
+	background-color: #fff;
+	padding: 12px;
+}
+.scoda-icon-setting a {
+	background-color: #2271B1;
+	color: #fff;
+	padding: 5px;
+	text-decoration: none;
+	border-radius: 1px;
+	float: right;
+}
+
+.scoda-network-layer { 
+	margin: 5px;
+	position: relative;
+}
+.scoda-network-layer a:focus {
+	box-shadow: none;
+}
+.scoda-network-layer a {
+	position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    /* padding: 15px; */
+    background-color: #ffffff14;
+    text-decoration: none;
+    font-size: 12px;
+    color: #6e79b6;
+	padding: 20px 20px;
+}
+.scoda-network-layer a:hover {
+	color: #222;
+}
+.scoda-minus-5 {
+	margin-left: -5px;
+	margin-right: -5px;
+	max-width: unset !important;
+	width: auto; 
+}
+
+.scoda-error-no-networks {
+	color: #666;
+	text-align: center;
+	width: 100%; 
+}
+ 
+/* Network Switcher */
+.scoda-sc-icon,
+.scoda-sc-text {
+	display: inline-block;
+}
+
+.scoda-sc-icon {
+	padding-right: 8px;
+}
+.scoda-network-switcher {
+
+}
+
+/* Facebook Setting Page */
+.scoda-network-selector {
+	width: 100%;
+}
+
+/* 
+* ====================================================================
+* Media Queries
+* ====================================================================
+*/
+@media screen and (max-width: 767.5px) {
+	
+	.scoda-flexbox.enable-media-md > *,
+	.scoda-max-2-grids.enable-media-md > * {
+		-ms-flex-preferred-size: 50%;
+		flex-basis: 50%;
+		-moz-flex-basis: 50%;
+		-webkit-flex-basis: 50%;
+		width: 50%;
+	}
+
+	.scoda-resources-boxes {
+		max-width: 80%;
+		-webkit-box-lines: wrap;
+		-moz-box-lines: wrap;
+		-ms-flex-wrap: wrap;
+		-webkit-flex-wrap: wrap;
+		flex-wrap: wrap;
+	}
+
+	.scoda-info-tabs .scoda-flexbox {
+		-webkit-flex-direction: column;
+		-moz-flex-direction: column;
+		-ms-flex-direction: column;
+		-o-flex-direction: column;
+		flex-direction: column;
+	}
+
+	.scoda-info-tabs .details {
+		padding-left: 0;
+		text-align: center;
+	}
+	.scoda-panel-logo {
+		max-width: 20px;
+		margin: 0 auto;
+		width: 100%;
+		text-align: center;
+	}
+	.scoda-panel-tabs {
+		width: 40px;
+	}
+	.scoda-panel-contents {
+		width: calc(100% - 40px);
+		margin-left: 40px;
+	}
+	.scoda-tab-lists {
+		margin-top: 20px;
+	}
+
+	.scoda-tab-lists li a {
+		padding: 3px 10px;
+	}
+
+	.scoda-tab-head-contents {
+		padding: 15px 10px;
+	}
+	.scoda-tab-lists li a span,
+	.scoda-tab-head-contents h3,
+	.scoda-tab-head-contents span,
+	.scoda-tab-title {
+		display: none;
+	}
+
+	.scoda-tab-lists li a {
+		position: relative;
+	}
+	.scoda-tab-lists li a span {
+		position: absolute;
+		background-color: #2f3556;
+		z-index: 10;
+		clear: both;  
+		overflow: hidden;
+		white-space: nowrap;
+		top: 0;
+		left: 39px;
+		padding: 5px 10px;
+		color: #fff; 
+	}
+
+	.scoda-add-copyright-bottom {
+		left: 60px;
+		color: #999;
+	}
+}
+
+@media screen and (max-width: 700.5px) {
+	.scoda-tabs ul li {
+		display: inline-block;
+		width: 49%;
+		text-align: center;
+	}
+	.scoda-tabs ul li a {
+		padding:5px;
+		display: block;
+	}
+
+	.scoda-helper-texts h3, .scoda-helper-texts p {
+		width: 95%;
+	}
+}
+
+@media screen and (max-width: 575.5px) {
+
+	.select2-container {
+		width: 100% !important;
+	}
+	.scoda-flexbox.enable-media-sm > * {
+		-ms-flex-preferred-size: 100% !important;
+		flex-basis: 100% !important;
+		-moz-flex-basis: 100% !important;
+		-webkit-flex-basis: 100% !important;
+		width: 100% !important;
+	}
+
+	.scoda-resources-boxes {
+		max-width: 100%;
+		-webkit-box-lines: wrap;
+		-moz-box-lines: wrap;
+		-ms-flex-wrap: wrap;
+		-webkit-flex-wrap: wrap;
+		flex-wrap: wrap;
+	}
+
+}
+
+@media only screen and (min-width: 575.8px) {
+	.scoda-col-sm-1 {
+		-moz-box-flex: 0 0 8.33333%;
+		-webkit-flex: 0 0 8.33333%;
+		-ms-flex: 0 0 8.33333%;
+		flex: 0 0 8.33333%;
+		max-width: 8.33333%;
+	}
+
+	.scoda-col-sm-2 {
+		-moz-box-flex: 0 0 16.66667%;
+		-webkit-flex: 0 0 16.66667%;
+		-ms-flex: 0 0 16.66667%;
+		flex: 0 0 16.66667%;
+		max-width: 16.66667%;
+	}
+
+	.scoda-col-sm-3 {
+		-moz-box-flex: 0 0 25%;
+		-webkit-flex: 0 0 25%;
+		-ms-flex: 0 0 25%;
+		flex: 0 0 25%;
+		max-width: 25%;
+	}
+
+	.scoda-col-sm-4 {
+		-moz-box-flex: 0 0 33.33333%;
+		-webkit-flex: 0 0 33.33333%;
+		-ms-flex: 0 0 33.33333%;
+		flex: 0 0 33.33333%;
+		max-width: 33.33333%;
+	}
+
+	.scoda-col-sm-5 {
+		-moz-box-flex: 0 0 41.66667%;
+		-webkit-flex: 0 0 41.66667%;
+		-ms-flex: 0 0 41.66667%;
+		flex: 0 0 41.66667%;
+		max-width: 41.66667%;
+	}
+
+	.scoda-col-sm-6 {
+		-moz-box-flex: 0 0 50%;
+		-webkit-flex: 0 0 50%;
+		-ms-flex: 0 0 50%;
+		flex: 0 0 50%;
+		max-width: 50%;
+	}
+
+	.scoda-col-sm-7 {
+		-moz-box-flex: 0 0 58.33333%;
+		-webkit-flex: 0 0 58.33333%;
+		-ms-flex: 0 0 58.33333%;
+		flex: 0 0 58.33333%;
+		max-width: 58.33333%;
+	}
+
+	.scoda-col-sm-8 {
+		-moz-box-flex: 0 0 66.66667%;
+		-webkit-flex: 0 0 66.66667%;
+		-ms-flex: 0 0 66.66667%;
+		flex: 0 0 66.66667%;
+		max-width: 66.66667%;
+	}
+
+	.scoda-col-sm-9 {
+		-moz-box-flex: 0 0 75%;
+		-webkit-flex: 0 0 75%;
+		-ms-flex: 0 0 75%;
+		flex: 0 0 75%;
+		max-width: 75%;
+	}
+
+	.scoda-col-sm-10 {
+		-moz-box-flex: 0 0 83.33333%;
+		-webkit-flex: 0 0 83.33333%;
+		-ms-flex: 0 0 83.33333%;
+		flex: 0 0 83.33333%;
+		max-width: 83.33333%;
+	}
+
+	.scoda-col-sm-11 {
+		-moz-box-flex: 0 0 91.66667%;
+		-webkit-flex: 0 0 91.66667%;
+		-ms-flex: 0 0 91.66667%;
+		flex: 0 0 91.66667%;
+		max-width: 91.66667%;
+	}
+
+	.scoda-col-sm-12 {
+		-moz-box-flex: 0 0 100%;
+		-webkit-flex: 0 0 100%;
+		-ms-flex: 0 0 100%;
+		flex: 0 0 100%;
+		max-width: 100%;
+	}
+}
+  
+@media only screen and (min-width: 767.8px) {
+.scoda-col-md-1 {
+	-moz-box-flex: 0 0 8.33333%;
+	-webkit-flex: 0 0 8.33333%;
+	-ms-flex: 0 0 8.33333%;
+	flex: 0 0 8.33333%;
+	max-width: 8.33333%;
+}
+
+.scoda-col-md-2 {
+	-moz-box-flex: 0 0 16.66667%;
+	-webkit-flex: 0 0 16.66667%;
+	-ms-flex: 0 0 16.66667%;
+	flex: 0 0 16.66667%;
+	max-width: 16.66667%;
+}
+
+.scoda-col-md-3 {
+	-moz-box-flex: 0 0 25%;
+	-webkit-flex: 0 0 25%;
+	-ms-flex: 0 0 25%;
+	flex: 0 0 25%;
+	max-width: 25%;
+}
+
+.scoda-col-md-4 {
+	-moz-box-flex: 0 0 33.33333%;
+	-webkit-flex: 0 0 33.33333%;
+	-ms-flex: 0 0 33.33333%;
+	flex: 0 0 33.33333%;
+	max-width: 33.33333%;
+}
+
+.scoda-col-md-5 {
+	-moz-box-flex: 0 0 41.66667%;
+	-webkit-flex: 0 0 41.66667%;
+	-ms-flex: 0 0 41.66667%;
+	flex: 0 0 41.66667%;
+	max-width: 41.66667%;
+}
+
+.scoda-col-md-6 {
+	-moz-box-flex: 0 0 50%;
+	-webkit-flex: 0 0 50%;
+	-ms-flex: 0 0 50%;
+	flex: 0 0 50%;
+	max-width: 50%;
+}
+
+.scoda-col-md-7 {
+	-moz-box-flex: 0 0 58.33333%;
+	-webkit-flex: 0 0 58.33333%;
+	-ms-flex: 0 0 58.33333%;
+	flex: 0 0 58.33333%;
+	max-width: 58.33333%;
+}
+
+.scoda-col-md-8 {
+	-moz-box-flex: 0 0 66.66667%;
+	-webkit-flex: 0 0 66.66667%;
+	-ms-flex: 0 0 66.66667%;
+	flex: 0 0 66.66667%;
+	max-width: 66.66667%;
+}
+
+.scoda-col-md-9 {
+	-moz-box-flex: 0 0 75%;
+	-webkit-flex: 0 0 75%;
+	-ms-flex: 0 0 75%;
+	flex: 0 0 75%;
+	max-width: 75%;
+}
+
+.scoda-col-md-10 {
+	-moz-box-flex: 0 0 83.33333%;
+	-webkit-flex: 0 0 83.33333%;
+	-ms-flex: 0 0 83.33333%;
+	flex: 0 0 83.33333%;
+	max-width: 83.33333%;
+}
+
+.scoda-col-md-11 {
+	-moz-box-flex: 0 0 91.66667%;
+	-webkit-flex: 0 0 91.66667%;
+	-ms-flex: 0 0 91.66667%;
+	flex: 0 0 91.66667%;
+	max-width: 91.66667%;
+}
+
+.scoda-col-md-12 {
+	-moz-box-flex: 0 0 100%;
+	-webkit-flex: 0 0 100%;
+	-ms-flex: 0 0 100%;
+	flex: 0 0 100%;
+	max-width: 100%;
+}
+}
+  
+@media only screen and (min-width: 991.8px) {
+.scoda-col-lg-1 {
+	-moz-box-flex: 0 0 8.33333%;
+	-webkit-flex: 0 0 8.33333%;
+	-ms-flex: 0 0 8.33333%;
+	flex: 0 0 8.33333%;
+	max-width: 8.33333%;
+}
+
+.scoda-col-lg-2 {
+	-moz-box-flex: 0 0 16.66667%;
+	-webkit-flex: 0 0 16.66667%;
+	-ms-flex: 0 0 16.66667%;
+	flex: 0 0 16.66667%;
+	max-width: 16.66667%;
+}
+
+.scoda-col-lg-3 {
+	-moz-box-flex: 0 0 25%;
+	-webkit-flex: 0 0 25%;
+	-ms-flex: 0 0 25%;
+	flex: 0 0 25%;
+	max-width: 25%;
+}
+
+.scoda-col-lg-4 {
+	-moz-box-flex: 0 0 33.33333%;
+	-webkit-flex: 0 0 33.33333%;
+	-ms-flex: 0 0 33.33333%;
+	flex: 0 0 33.33333%;
+	max-width: 33.33333%;
+}
+
+.scoda-col-lg-5 {
+	-moz-box-flex: 0 0 41.66667%;
+	-webkit-flex: 0 0 41.66667%;
+	-ms-flex: 0 0 41.66667%;
+	flex: 0 0 41.66667%;
+	max-width: 41.66667%;
+}
+
+.scoda-col-lg-6 {
+	-moz-box-flex: 0 0 50%;
+	-webkit-flex: 0 0 50%;
+	-ms-flex: 0 0 50%;
+	flex: 0 0 50%;
+	max-width: 50%;
+}
+
+.scoda-col-lg-7 {
+	-moz-box-flex: 0 0 58.33333%;
+	-webkit-flex: 0 0 58.33333%;
+	-ms-flex: 0 0 58.33333%;
+	flex: 0 0 58.33333%;
+	max-width: 58.33333%;
+}
+
+.scoda-col-lg-8 {
+	-moz-box-flex: 0 0 66.66667%;
+	-webkit-flex: 0 0 66.66667%;
+	-ms-flex: 0 0 66.66667%;
+	flex: 0 0 66.66667%;
+	max-width: 66.66667%;
+}
+
+.scoda-col-lg-9 {
+	-moz-box-flex: 0 0 75%;
+	-webkit-flex: 0 0 75%;
+	-ms-flex: 0 0 75%;
+	flex: 0 0 75%;
+	max-width: 75%;
+}
+
+.scoda-col-lg-10 {
+	-moz-box-flex: 0 0 83.33333%;
+	-webkit-flex: 0 0 83.33333%;
+	-ms-flex: 0 0 83.33333%;
+	flex: 0 0 83.33333%;
+	max-width: 83.33333%;
+}
+
+.scoda-col-lg-11 {
+	-moz-box-flex: 0 0 91.66667%;
+	-webkit-flex: 0 0 91.66667%;
+	-ms-flex: 0 0 91.66667%;
+	flex: 0 0 91.66667%;
+	max-width: 91.66667%;
+}
+
+.scoda-col-lg-12 {
+	-moz-box-flex: 0 0 100%;
+	-webkit-flex: 0 0 100%;
+	-ms-flex: 0 0 100%;
+	flex: 0 0 100%;
+	max-width: 100%;
+}
+}
+  
+@media only screen and (min-width: 1200.3px) {
+.scoda-col-xl-1 {
+	-moz-box-flex: 0 0 8.33333%;
+	-webkit-flex: 0 0 8.33333%;
+	-ms-flex: 0 0 8.33333%;
+	flex: 0 0 8.33333%;
+	max-width: 8.33333%;
+}
+
+.scoda-col-xl-2 {
+	-moz-box-flex: 0 0 16.66667%;
+	-webkit-flex: 0 0 16.66667%;
+	-ms-flex: 0 0 16.66667%;
+	flex: 0 0 16.66667%;
+	max-width: 16.66667%;
+}
+
+.scoda-col-xl-3 {
+	-moz-box-flex: 0 0 25%;
+	-webkit-flex: 0 0 25%;
+	-ms-flex: 0 0 25%;
+	flex: 0 0 25%;
+	max-width: 25%;
+}
+
+.scoda-col-xl-4 {
+	-moz-box-flex: 0 0 33.33333%;
+	-webkit-flex: 0 0 33.33333%;
+	-ms-flex: 0 0 33.33333%;
+	flex: 0 0 33.33333%;
+	max-width: 33.33333%;
+}
+
+.scoda-col-xl-5 {
+	-moz-box-flex: 0 0 41.66667%;
+	-webkit-flex: 0 0 41.66667%;
+	-ms-flex: 0 0 41.66667%;
+	flex: 0 0 41.66667%;
+	max-width: 41.66667%;
+}
+
+.scoda-col-xl-6 {
+	-moz-box-flex: 0 0 50%;
+	-webkit-flex: 0 0 50%;
+	-ms-flex: 0 0 50%;
+	flex: 0 0 50%;
+	max-width: 50%;
+}
+
+.scoda-col-xl-7 {
+	-moz-box-flex: 0 0 58.33333%;
+	-webkit-flex: 0 0 58.33333%;
+	-ms-flex: 0 0 58.33333%;
+	flex: 0 0 58.33333%;
+	max-width: 58.33333%;
+}
+
+.scoda-col-xl-8 {
+	-moz-box-flex: 0 0 66.66667%;
+	-webkit-flex: 0 0 66.66667%;
+	-ms-flex: 0 0 66.66667%;
+	flex: 0 0 66.66667%;
+	max-width: 66.66667%;
+}
+
+.scoda-col-xl-9 {
+	-moz-box-flex: 0 0 75%;
+	-webkit-flex: 0 0 75%;
+	-ms-flex: 0 0 75%;
+	flex: 0 0 75%;
+	max-width: 75%;
+}
+
+.scoda-col-xl-10 {
+	-moz-box-flex: 0 0 83.33333%;
+	-webkit-flex: 0 0 83.33333%;
+	-ms-flex: 0 0 83.33333%;
+	flex: 0 0 83.33333%;
+	max-width: 83.33333%;
+}
+
+.scoda-col-xl-11 {
+	-moz-box-flex: 0 0 91.66667%;
+	-webkit-flex: 0 0 91.66667%;
+	-ms-flex: 0 0 91.66667%;
+	flex: 0 0 91.66667%;
+	max-width: 91.66667%;
+}
+
+.scoda-col-xl-12 {
+	-moz-box-flex: 0 0 100%;
+	-webkit-flex: 0 0 100%;
+	-ms-flex: 0 0 100%;
+	flex: 0 0 100%;
+	max-width: 100%;
+}
+}

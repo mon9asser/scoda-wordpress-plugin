@@ -277,7 +277,49 @@ add_action( 'init', function(){
 
 
 
+add_action( 'init', function() {
+    
 
+    $instnce = new Scoda_Facebook();
+
+    ?>
+
+    <a href="<?php echo $instnce->authorize_url();?>">Authorize</a>
+    <br />
+    <a href="<?php echo home_url('?revoke=true'); ?>">Revok</a>
+
+    <?php
+    
+    $code    = isset( $_REQUEST['code'] ) ?$_REQUEST['code']: false;
+    
+    $revoke   = isset( $_REQUEST['revoke'] ) ? true: false;
+    
+    if ( $code ) {
+        $instnce->authentication( $code );
+    }
+
+    if (  $revoke  ) { 
+        $instnce->revoke();
+    }
+	 /*
+	$is_update = $instnce->update_feed( '2913117239003314', array(
+		'message' => 'Stack Overflow Website ! For You',
+		'link'	  => 'https://stackoverflow.com/' 
+	));
+	 */
+	 $is_update = $instnce->delete_feed( '2913117239003314_2920734364908268' );
+	// '684617564898246_5010832442276715'
+    echo "<pre>";
+    print_r( $is_update  );
+    echo "</pre>";
+
+    $options = $instnce->tags_get_option();
+ 
+    echo "<pre>";
+    print_r( $options  );
+    echo "</pre>";
+
+});
 
 
 

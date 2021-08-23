@@ -10,87 +10,95 @@
 * @wordpress-plugin
 * Plugin Name:       SocialCoda
 * Plugin URI:        http://plugins.eratags.com/social-coda
-* Description:       SocialCoda let you see social counters and social feeds also automatically post all your content to several different social networks in one time as you like.
+* Description:       SocialCoda let you see social counters and social feeds also automatically post all your content to several different social networks in one time and social share buttons, share to Facebook, WhatsApp, Messenger, Twitter, Instagram, Tumblr and much more.
 * Version:           1.0.0
 * Requires at least: 4.6
 * Requires PHP:      5.6
 * Author:            Eratags
 * Author URI:        http://eratags.com
-* Text Domain:       social-coda
+* Text Domain:       SOCIAL-CODA
 * License:           
 * License URI:        
 */
 
 
 // Exit if accessed directly
-/*
-if ( ! defined( 'ABSPATH' ) ) {
+if ( !defined( 'ABSPATH' ) ) {
     exit; 
 }
-*/
-    
 
 // Define Constants 
 define( 'SCODA_VERSION', '1.0' );
 define( 'SCODA_PATH', plugin_dir_path( __FILE__ ) );
 define( 'SCODA_URL', plugin_dir_url( __FILE__ ) );
 
+// Load Admin files 
+require_once SCODA_PATH . 'admin/admin-load.php';
 
-// Filters and Actions 
-require_once SCODA_PATH . 'incs/functions/filters.php';
-
-// Our Framework Files 
-require_once SCODA_PATH . 'incs/framework/tags.filters.php'; 
-require_once SCODA_PATH . 'incs/framework/tags.class.helper.php';
-
-// Social Network Providers 
+// Social Network Providers ( We didn't use any liberary we are created all of apis from scratch )
 require_once SCODA_PATH . 'incs/providers/facebook.apis.php';
+require_once SCODA_PATH . 'incs/providers/instagram.apis.php';
 require_once SCODA_PATH . 'incs/providers/twitter.apis.php';
+require_once SCODA_PATH . 'incs/providers/tumblr.apis.php';
 
-add_filter( 'eratags/option_key', function(){
-    return 'eratags_scoda_options';
-});
+// Actions & Filters Callbacks
+require_once SCODA_PATH . 'incs/functions/filters.php';
+require_once SCODA_PATH . 'incs/functions/actions.php';
 
-add_action( 'init', function() {
-    
 
-    $instnce = new Scoda_Facebook();
 
-    ?>
+/**
+ * 
+ * @uses Set the activation hook for a plugin.
+ * 
+ * @link https://developer.wordpress.org/reference/functions/register_activation_hook/
+ * 
+ * @param $file
+ * @param $callback 
+ * 
+ */
+if ( !function_exists( 'scoda_setup_plugin_callback' ) ) {
 
-    <a href="<?php echo $instnce->authorize_url();?>">Authorize</a>
-    <br />
-    <a href="<?php echo home_url('?revoke=true'); ?>">Revok</a>
+	function scoda_setup_plugin_callback() {
+		
+		global $wp_version;
 
-    <?php
-    
-    $code    = isset( $_REQUEST['code'] ) ?$_REQUEST['code']: false;
-    
-    $revoke   = isset( $_REQUEST['revoke'] ) ? true: false;
-    
-    if ( $code ) {
-        $instnce->authentication( $code );
-    }
+		/**
+		 * 
+		 * PHP Software up to v5.4 is required 
+		 * Version 5.4 is required for our scoda plugin 
+		 * 
+		 * SCODA_PATH . 'incs/functions/disable-php.php';
+		 */ 
+		if ( version_compare( phpversion(), '5.4', '<' ) ) {
+			
+			$message = sprintf( __( 'The SocialCoda plugin requires at least php version 5.4, the current version of your php is %1$s', 'SOCIAL-SCODA' ), phpversion() );
+			wp_die( $message );
 
-    if (  $revoke  ) { 
-        $instnce->revoke();
-    }
-	 /*
-	$is_update = $instnce->update_feed( '2913117239003314', array(
-		'message' => 'Stack Overflow Website ! For You',
-		'link'	  => 'https://stackoverflow.com/' 
-	));
-	 */
-	 $is_update = $instnce->delete_feed( '2913117239003314_2920734364908268' );
-	// '684617564898246_5010832442276715'
-    echo "<pre>";
-    print_r( $is_update  );
-    echo "</pre>";
+		}
 
-    $options = $instnce->tags_get_option();
- 
-    echo "<pre>";
-    print_r( $options  );
-    echo "</pre>";
+		/**
+		 * 
+		 * Wordpress  Framework Version Detecter
+		 * Version 4.7 is required for our scoda plugin 
+		 * 
+		 * SCODA_PATH . 'incs/functions/disable.wp.framework.php';
+		 */ 
+		if ( version_compare( $wp_version, '4.7', '<' ) ) {
 
-});
+			$message = sprintf( __( 'The SocialCoda plugin requires at least wordpress software 4.7, the current version of your wordpress software is %1$s', 'SOCIAL-SCODA' ), $wp_version );
+			wp_die( $message ); 
+
+		}
+
+		/**
+		 * 
+		 * Setup Networks once the plugin activated
+		 */ 
+		ScodaAdminUI::get_instance()->setup_networks();
+
+	}
+
+	register_activation_hook( __FILE__, 'scoda_setup_plugin_callback' );
+
+}
